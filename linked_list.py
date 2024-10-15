@@ -27,29 +27,32 @@ class LinkedList:
         self.size += 1
 
     def remove(self, data=None):
-        if data is None:
-            self.root = self.root.next
-            self.size -= 1
+
+        # to handle empty linkedlist
+        if not self.root:
+            return False
 
         previous_node = None
         current_node = self.root
+        
+        # if root node is needed to be removed
+        if current_node.get_data() == data:
+            self.root = self.root.get_next()
+            self.size -= 1
+            return True
 
-        while (current_node):
+        while current_node:
             if current_node.get_data() == data:
-                if previous_node is None:
-                    self.root = self.root.get_next()
-                    self.size -= 1
-                    return True
-
-                previous_node.set_next(current_node.get_next())
+                if previous_node:
+                    previous_node.set_next(current_node.get_next())
                 self.size -= 1
-
+                return True
             previous_node = current_node
             current_node = current_node.get_next()
 
     def print_all(self):
         current_node = self.root
-        while (current_node):
+        while current_node:
             print(current_node.get_data())
             current_node = current_node.get_next()
 
