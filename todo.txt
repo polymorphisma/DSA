@@ -1,0 +1,14 @@
+for the linked list remaining methods to add.
+
+Summary of Missing Features to Implement:
+Edge case handling for non-existent nodes in remove.
+Search (find) method.
+Check if list is empty (is_empty).
+Return the size of the list (get_size).
+Append nodes to the end (append).
+Insert nodes at a specific index (insert_at_position).
+Reverse the list (reverse).
+Clear the entire list (clear).
+Readable string representation of the list (__str__).
+Optional: Implement doubly linked list for more advanced operations.
+Optional: Sorting the list (sort).

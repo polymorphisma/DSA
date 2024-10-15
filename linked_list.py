@@ -34,7 +34,7 @@ class LinkedList:
 
         previous_node = None
         current_node = self.root
-        
+
         # if root node is needed to be removed
         if current_node.get_data() == data:
             self.root = self.root.get_next()
