@@ -1,8 +1,6 @@
 for the linked list remaining methods to add.
 
 Summary of Missing Features to Implement:
-Edge case handling for non-existent nodes in remove.
-Search (find) method.
 Check if list is empty (is_empty).
 Return the size of the list (get_size).
 Append nodes to the end (append).

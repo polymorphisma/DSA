@@ -50,6 +50,16 @@ class LinkedList:
             previous_node = current_node
             current_node = current_node.get_next()
 
+    def find(self, data):
+        current_node = self.root
+
+        while current_node:
+            if current_node.get_data() == data:
+                return data
+            current_node = current_node.get_next()
+
+        return False
+
     def print_all(self):
         current_node = self.root
         while current_node:
@@ -63,10 +73,5 @@ linked_list.add(20)
 linked_list.add(30)
 linked_list.add(40)
 
-linked_list.print_all()
-print(linked_list.size)
-
-print('---------------------------------------')
-linked_list.remove(20)
-linked_list.print_all()
-print(linked_list.size)
+print(linked_list.find(20))
+print(linked_list.find(100))
