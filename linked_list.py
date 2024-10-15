@@ -31,11 +31,27 @@ class LinkedList:
             self.root = self.root.next
             self.size -= 1
 
+        previous_node = None
+        current_node = self.root
+
+        while (current_node):
+            if current_node.get_data() == data:
+                if previous_node is None:
+                    self.root = self.root.get_next()
+                    self.size -= 1
+                    return True
+
+                previous_node.set_next(current_node.get_next())
+                self.size -= 1
+
+            previous_node = current_node
+            current_node = current_node.get_next()
+
     def print_all(self):
         current_node = self.root
         while (current_node):
-            print(current_node.data)
-            current_node = current_node.next
+            print(current_node.get_data())
+            current_node = current_node.get_next()
 
 
 linked_list = LinkedList()
@@ -48,6 +64,6 @@ linked_list.print_all()
 print(linked_list.size)
 
 print('---------------------------------------')
-linked_list.remove()
+linked_list.remove(20)
 linked_list.print_all()
 print(linked_list.size)
